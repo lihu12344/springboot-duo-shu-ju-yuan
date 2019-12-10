@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    druid:
+      one:
+        url: jdbc:mysql://localhost:3306/h1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: 123456
+      two:
+        url: jdbc:mysql://localhost:3306/h2?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: 123456
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.example.demo.pojo
+  type-enums-package: com.example.demo.myenum
